@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="texttoolbar.js"></script>
+	<link rel="stylesheet" href="texttoolbar.css">
+	<script>
+		$(function(){
+			$('input').textToolbar({
+				'buttons': [
+					{
+						'img': 'quotes',
+						'func': function(target, before, select, after){
+							target.val(before + '«' + select + '»' + after);
+						}
+					},
+					{
+						'img': 'uppper',
+						'func': function(target, before, select, after){
+							target.val(before + select.toUpperCase() + after);
+						}
+					},
+					{
+						'img': 'lower',
+						'func': function(target, before, select, after){
+							target.val(before + select.toLowerCase() + after);
+						}
+					},
+					{
+						'img': '',
+						'func': function(target, before, select, after){
+							target.val(before + '' + after);
+						}
+					},
+					{
+						'img': 'alert',
+						'func': function(target, before, select, after){
+							alert('Alert!!!');
+						}
+					},
+					{
+						'img': 'clear tags',
+						'func': function(target, before, select, after){
+							target.val(before + select.replace(/<\/?[^>]+>/gi, '') + after);
+						}
+					},
+					{
+						'img': 'trim',
+						'func': function(target, before, select, after){
+							target.val(before + select.trim() + after);
+						}
+					}
+				]
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+	<input value="123">
+	<div>&nbsp;</div>
+	<input value="123">
+	<div>&nbsp;</div>
+	<input value="123">
+	<div>&nbsp;</div>
+	<input value="123">
+	<div>&nbsp;</div>
+	<input value="123">
+	<div>&nbsp;</div>
+	<input value="123">
+</body>
+</html>
